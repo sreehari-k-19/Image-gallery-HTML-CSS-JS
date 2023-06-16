@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image gallery</title>
+    <script src="./js//main.js" defer></script>
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <!-- -------HEADER__START------------>
+    <header>
+        <div class="header-content">
+            <nav>
+                <div><i class="uil uil-capture"></i>
+                    <h1>Gallery</h1>
+                </div>
+                <!-- -------HEADER__MENU_START------------>
+                <div class="nav-menu-list">
+                    <div>Home</div>
+                    <div>Explore</div>
+                    <div><i class="uil uil-user-circle"></i></div>
+                    <button onclick="uploadModal()">Upload</button>
+                </div>
+                <!-- -------HEADER__MENU_STOP------------>
+
+                <!-- -------MOBILE-MENU_START------------>
+                <div class="mobile-menu">
+                    <i class="uil uil-list-ui-alt"></i>
+                </div>
+                <!-- -------MOBILE-MENU_STOP------------>
+            </nav>
+            <div class="search">
+                <h1>Image gallery</h1>
+                <p>Welcome to our stunning collection of images</p>
+                <div class="search-box">
+                    <i class="uil uil-search"></i>
+                    <input type="text" placeholder="Search images" maxlength="50">
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- -------HEADER__STOP----------- -->
+
+    <!-- --------GALLLERY_GRID__START----------- -->
+    <div class="gallery">
+        <div class="menus">
+            <button class="menus-button" data-filter="Fashion">Fashion</button>
+            <button class="menus-button" data-filter="Nature">Nature</button>
+            <button class="menus-button" data-filter="People">People</button>
+            <button class="menus-button" data-filter="Architecture">Architecture</button>
+        </div>
+        <p class="gallery-title">New Trending</p>
+        <div class="pin_container" id="img-container">
+        </div>
+        <div class="load-more"><button id="loadmore-button">Load More</button></div>
+    </div>
+    <!-- --------GALLLERY_GRID_STOP----------- -->
+
+    <!-- --------UPLOAD_PREV__START----------- -->
+    <div class="prevbox upload-image">
+        <div class="prevbox-content">
+            <div class="upload-head">
+                <h3>Upload your image</h3>
+                <div><i onclick="uploadModalClose()" class="uil uil-times-square"></i></div>
+            </div>
+
+            <form id="uploadForm" enctype="multipart/form-data">
+                <div>
+                    <label for="name">Full Name </label>
+                    <input id="name" type="text" placeholder="Photographer name" name="name" required />
+                </div>
+
+                <div>
+                    <label class="image-upload-label" for="fileInput" onchange="previewImage(event)">
+                    </label>
+                    <input type="file" id="fileInput" class="hidden-input">
+                </div>
+                <p class="upload-errror">Upload a valid Image png / jpeg</p>
+                <button type="submit">Upload Image</button>
+            </form>
+        </div>
+    </div>
+    <!-- --------UPLOAD_PREV__STOP----------- -->
+</body>
+
+</html>
